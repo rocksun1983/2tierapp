@@ -1,5 +1,5 @@
 # 2tierapp
-A containerized **Two-Tier Web Application** This app consisting of a frontend (built with HTML/CSS/JS) and a backend API (Node.js with MongoDB). The app is designed for easy deployment using **Docker** and **GitHub Actions** and can be pushed to **Docker Hub** or **AWS ECR**.
+A containerized **Two-Tier Web Application** consisting of a frontend (built with HTML/CSS/JS) and a backend API (Node.js with MongoDB). The app is designed for easy deployment using **Docker** and **GitHub Actions** and can be pushed to **Docker Hub** or **AWS ECR**.
 
 ---
 
@@ -74,7 +74,7 @@ DOCKER_PASSWORD
 
 Workflow file: .github/workflows/docker-build.yml
 
-🛠 AWS ECR Deployment 
+🛠 AWS ECR Deployment (Optional)
 To deploy to AWS ECR:
 
 Create a public ECR repo
@@ -106,3 +106,6 @@ Edit
         └── docker-build.yml
 ✍️ Author
 Peter Sunday (@rocksun1983)
+
+License
+This project is licensed under the MIT License.
