@@ -1,0 +1,29 @@
+name: Build and Push 2tierapp Docker Image
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Log in to Docker Hub
+      run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+
+    - name: Build Frontend Image
+      run: docker build -t pagedconcept/2tierapp:frontend ./frontend
+
+    - name: Build Backend Image
+      run: docker build -t pagedconcept/2tierapp:backend ./backend
+
+    - name: Push Frontend
+      run: docker push pagedconcept/2tierapp:frontend
+
+    - name: Push Backend
+      run: docker push pagedconcept/2tierapp:backend
